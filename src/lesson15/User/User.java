@@ -1,4 +1,4 @@
-package lesson15;
+package lesson15.User;
 
 public class User {
     private long id;

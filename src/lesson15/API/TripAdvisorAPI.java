@@ -12,7 +12,8 @@ public class TripAdvisorAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         int count = 0;
         for (Room room : rooms) {
-            if (room != null && price == room.getPrice() && (persons + 1) >= room.getPersons() && (persons - 1) <= room.getPersons() && city == room.getCityName() && hotel == room.getHotelName()) {
+            if (room != null && price == room.getPrice() && (persons + 1) >= room.getPersons() &&
+                    (persons - 1) <= room.getPersons() && city == room.getCityName() && hotel == room.getHotelName()) {
                 count++;
             }
         }
@@ -20,7 +21,8 @@ public class TripAdvisorAPI implements API {
         Room[] rightRoom = new Room[count];
         int i = 0;
         for (Room room : rooms) {
-            if (room != null && price == room.getPrice() && (persons + 1) >= room.getPersons() && (persons - 1) <= room.getPersons() && city == room.getCityName() && hotel == room.getHotelName()) {
+            if (room != null && price == room.getPrice() && (persons + 1) >= room.getPersons() &&
+                    (persons - 1) <= room.getPersons() && city == room.getCityName() && hotel == room.getHotelName()) {
                 rightRoom[i] = room;
                 i++;
             }

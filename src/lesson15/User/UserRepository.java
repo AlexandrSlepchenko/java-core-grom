@@ -1,4 +1,4 @@
-package lesson15;
+package lesson15.User;
 
 public class UserRepository {
     private User[] users = new User[10];
