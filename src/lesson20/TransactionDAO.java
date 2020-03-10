@@ -43,10 +43,6 @@ public class TransactionDAO {
             throw new LimitExceeded("Transaction limit per day count exceed " + transaction.getId() + ".Can`t be saved");
         }
 
-//        if (!transaction.getCity().equals(utils.getCities())) {
-//            throw new BadRequestException("Incorect transaction ID# " + transaction.getId() + " citi direct. Transaction Faild");
-//        }
-
         boolean validateCity = false;
         for (String city : utils.getCities()) {
             if (city.equals(transaction.getCity())) {
@@ -59,13 +55,13 @@ public class TransactionDAO {
             throw new BadRequestException("Transaction ID# " + transaction.getId() + " faild. Incorrect city");
         }
 
-        int freeStotsCount = 0;
+        int freeSlotsCount = 0;
         for (Transaction tr : transactions) {
             if (tr == null) ;
-            freeStotsCount++;
+            freeSlotsCount++;
         }
 
-        if (freeStotsCount <= 0) {
+        if (freeSlotsCount <= 0) {
             throw new InternalServerException("Not enought free slots. Transaction ID# " + transaction.getId() + " faild");
         }
     }
